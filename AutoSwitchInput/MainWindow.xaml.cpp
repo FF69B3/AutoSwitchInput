@@ -12,6 +12,8 @@
 #include "Common/StartupManager.h"
 #include "Common/DPICalcHelper.h"
 
+#define StartupName L"AutoSwitchInputApp"
+
 namespace winrt::AutoSwitchInput::implementation
 {
 
@@ -40,12 +42,15 @@ namespace winrt::AutoSwitchInput::implementation
 		m_AppWindow.IsShownInSwitchers(false);
 
 
-		SetWindowLongPtr(hWnd, GWL_EXSTYLE, GetWindowLongPtr(hWnd, GWL_EXSTYLE) | WS_EX_LAYERED | WS_EX_TOOLWINDOW);
+		SetWindowLongPtr(hWnd, GWL_EXSTYLE, GetWindowLongPtr(hWnd, GWL_EXSTYLE) | WS_EX_LAYERED);
 		SetLayeredWindowAttributes(hWnd, 0, 0, LWA_ALPHA);
 
 		oldWndProc = (WNDPROC)SetWindowLongPtr(hWnd, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(MainWindow::TrayMenuWindowProc));
 
 		if (UserInputHook::Initialize()) NotifyIcon::CreateTrayIcon(hWnd);
+
+
+		StartupItem().IsChecked(StartupManager::IsStartupEnabled(StartupName));
 
 	}
 
@@ -108,11 +113,11 @@ namespace winrt::AutoSwitchInput::implementation
 
 			if (SelectedItem.IsChecked()) {
 			
-				StartupManager::EnableStartup(L"AutoSwitchInput");
+				StartupManager::EnableStartup(StartupName);
 			}
 			else {
 			
-				StartupManager::DisableStartup(L"AutoSwitchInput");
+				StartupManager::DisableStartup(StartupName);
 			}
 
 		}

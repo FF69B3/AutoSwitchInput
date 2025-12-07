@@ -24,7 +24,7 @@ namespace winrt::AutoSwitchInput::implementation
 		void OnExit(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e);
 
     private:
-        HWND  hWnd{ nullptr };
+        HWND hWnd{ nullptr };
         winrt::Microsoft::UI::Windowing::AppWindow m_AppWindow{nullptr};
     };
 }

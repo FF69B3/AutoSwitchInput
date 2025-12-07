@@ -17,7 +17,9 @@ void CALLBACK UserInputHook::EventHookCallback(
 
 	if (threadId == 0) return;
 
-	ImmAssociateContext(hwnd, ImmGetContext(hwnd));
+	HIMC hIMC = ImmGetContext(hwnd);
+
+	ImmAssociateContext(hwnd, hIMC);
 
 	HWND IMEWnd = ImmGetDefaultIMEWnd(hwnd);
 
@@ -91,6 +93,9 @@ void CALLBACK UserInputHook::EventHookCallback(
 
 		//}
 	}
+
+
+	if (hIMC) ImmReleaseContext(hwnd, hIMC);
 
 }
 

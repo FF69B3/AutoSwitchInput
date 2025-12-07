@@ -35,6 +35,7 @@
                 <MenuFlyoutSeparator />
 
                 <ToggleMenuFlyoutItem
+                    x:Name="StartupItem"
                     Height="38"
                     Click="OnStartupClick"
                     Style="{StaticResource MergeIconsToggleMenuFlyoutItem}"

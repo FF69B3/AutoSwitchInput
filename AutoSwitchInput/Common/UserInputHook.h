@@ -25,7 +25,7 @@ enum class UserInputType : BYTE
 {
 	Default = 0,
 	English,
-	Chinese
+	//Chinese
 };
 
 
