@@ -1,0 +1,2 @@
+# AutoSwitchInput
+解决Windows11切换窗口自动切换中英文的问题。

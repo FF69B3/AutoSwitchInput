@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="AutoSwitchInput.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AutoSwitchInput">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                <!--  Other merged dictionaries here  -->
+            </ResourceDictionary.MergedDictionaries>
+            <!--  Other app resources here  -->
+
+
+
+
+            <Style
+                x:Key="MergeIconsMenuFlyoutItem"
+                BasedOn="{StaticResource DefaultMenuFlyoutItemStyle}"
+                TargetType="MenuFlyoutItem">
+                <Setter Property="local:StyleResources.Resources">
+                    <Setter.Value>
+                        <ResourceDictionary>
+                            <Thickness x:Key="MenuFlyoutItemPlaceholderThemeThickness">0</Thickness>
+                            <Thickness x:Key="MenuFlyoutItemDoublePlaceholderThemeThickness">28,0,0,0</Thickness>
+                        </ResourceDictionary>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style
+                x:Key="MergeIconsMenuFlyoutSubItem"
+                BasedOn="{StaticResource DefaultMenuFlyoutSubItemStyle}"
+                TargetType="MenuFlyoutSubItem">
+                <Setter Property="local:StyleResources.Resources">
+                    <Setter.Value>
+                        <ResourceDictionary>
+                            <Thickness x:Key="MenuFlyoutItemPlaceholderThemeThickness">0</Thickness>
+                            <Thickness x:Key="MenuFlyoutItemDoublePlaceholderThemeThickness">28,0,0,0</Thickness>
+                        </ResourceDictionary>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style
+                x:Key="MergeIconsToggleMenuFlyoutItem"
+                BasedOn="{StaticResource DefaultToggleMenuFlyoutItemStyle}"
+                TargetType="ToggleMenuFlyoutItem">
+                <Setter Property="local:StyleResources.Resources">
+                    <Setter.Value>
+                        <ResourceDictionary>
+                            <Thickness x:Key="MenuFlyoutItemPlaceholderThemeThickness">0</Thickness>
+                        </ResourceDictionary>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style
+                x:Key="MergeIconsRadioMenuFlyoutItem"
+                BasedOn="{StaticResource DefaultRadioMenuFlyoutItemStyle}"
+                TargetType="RadioMenuFlyoutItem">
+                <Setter Property="local:StyleResources.Resources">
+                    <Setter.Value>
+                        <ResourceDictionary>
+                            <Thickness x:Key="MenuFlyoutItemPlaceholderThemeThickness">0</Thickness>
+                        </ResourceDictionary>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+
+</Application>

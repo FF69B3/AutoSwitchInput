@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Window
+    x:Class="AutoSwitchInput.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:AutoSwitchInput"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="AutoSwitchInput"
+    Closed="OnClosed"
+    mc:Ignorable="d">
+
+    <Grid Loaded="OnLoaded">
+        <Grid.Resources>
+
+
+
+            <MenuFlyout x:Name="TrayMenuFlyout" ShouldConstrainToRootBounds="False">
+
+                <RadioMenuFlyoutItem
+                    Height="38"
+                    Click="OnInputTypeChange"
+                    GroupName="InputGroup"
+                    IsChecked="True"
+                    Style="{StaticResource MergeIconsRadioMenuFlyoutItem}"
+                    Text="英文输入法" />
+
+                <RadioMenuFlyoutItem
+                    Height="38"
+                    Click="OnInputTypeChange"
+                    GroupName="InputGroup"
+                    IsChecked="False"
+                    Style="{StaticResource MergeIconsRadioMenuFlyoutItem}"
+                    Text="默认输入法" />
+                <MenuFlyoutSeparator />
+
+                <ToggleMenuFlyoutItem
+                    Height="38"
+                    Click="OnStartupClick"
+                    Style="{StaticResource MergeIconsToggleMenuFlyoutItem}"
+                    Text="开机自启动" />
+                <MenuFlyoutSeparator />
+
+                <MenuFlyoutItem
+                    Height="38"
+                    Click="OnExit"
+                    Style="{StaticResource MergeIconsMenuFlyoutItem}"
+                    Text="退出程序">
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon HorizontalAlignment="Center" Glyph="&#xE7E8;" />
+                    </MenuFlyoutItem.Icon>
+                </MenuFlyoutItem>
+
+            </MenuFlyout>
+        </Grid.Resources>
+    </Grid>
+</Window>
