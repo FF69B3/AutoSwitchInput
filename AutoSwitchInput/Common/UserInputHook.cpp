@@ -15,7 +15,7 @@ void CALLBACK UserInputHook::EventHookCallback(
 	DWORD processId = 0;
 	DWORD threadId = GetWindowThreadProcessId(hwnd, &processId);
 
-	if (threadId == 0 || hwnd != GetForegroundWindow())	return;
+	if (threadId == 0) return;
 
 	ImmAssociateContext(hwnd, ImmGetContext(hwnd));
 
